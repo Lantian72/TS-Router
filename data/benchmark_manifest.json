@@ -1,0 +1,24 @@
+{
+  "univariate_candidates": 700,
+  "univariate_original_valid": 697,
+  "multivariate_series": 68,
+  "original_univariate_exclusions": [
+    {
+      "filename": "331_UCR_id_29_Facility_tr_50000_1st_837400.csv",
+      "error": "missing scores for Sub_LOF+Sub_IForest+PCA"
+    },
+    {
+      "filename": "384_UCR_id_82_Facility_tr_50000_1st_884100.csv",
+      "error": "missing scores for Sub_LOF+Sub_IForest+PCA"
+    },
+    {
+      "filename": "503_UCR_id_201_Facility_tr_50000_1st_593450.csv",
+      "error": "missing scores for Sub_LOF+Sub_IForest+PCA"
+    }
+  ],
+  "historical_result_notes": "Original manuscript aggregates combine new univariate VUS-PR-head results and an older multivariate F1T-head result file; this release is the pruned 850k checkpoint, not a claim of exact full-table reproduction.",
+  "downloads": {
+    "U": "https://www.thedatum.org/datasets/TSB-AD-U.zip",
+    "M": "https://www.thedatum.org/datasets/TSB-AD-M.zip"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "description": "Synthetic periodic signals with additive noise and injected deviations for smoke testing only, not paper benchmark results.",
+  "seed": 72,
+  "length": 1024,
+  "train_index": 512,
+  "commands": [
+    "python infer.py --input examples/synthetic_univariate.csv --train-index 512 --head all --device cpu --evaluate",
+    "python infer.py --input examples/synthetic_multivariate.csv --train-index 512 --head all --device cpu --evaluate"
+  ]
+}

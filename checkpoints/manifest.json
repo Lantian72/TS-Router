@@ -1,0 +1,112 @@
+{
+  "format_version": 1,
+  "encoder": {
+    "config": {
+      "d_model": 512,
+      "d_proj": 256,
+      "patch_size": 16,
+      "num_layers": 8,
+      "num_heads": 8,
+      "d_ff_dropout": 0.1,
+      "use_rope": true,
+      "activation": "gelu",
+      "num_features": 1
+    },
+    "shards": [
+      "encoder-00001-of-00004.pt",
+      "encoder-00002-of-00004.pt",
+      "encoder-00003-of-00004.pt",
+      "encoder-00004-of-00004.pt"
+    ],
+    "source_repository": "thu-sail-lab/Time-RCD",
+    "source_file": "best_model/pretrain_checkpoint_best_uni.pth",
+    "source_sha256": "be8906c6a62f16cedd8fe0fe48ef11c4363099633ed6ba8780af819337f7ffaa",
+    "export": "unchanged float32 encoder parameters; optimizer and unused reconstruction/anomaly heads excluded"
+  },
+  "router": {
+    "file": "router.pt",
+    "input_dim": 256,
+    "hidden_layers": [
+      1024,
+      512,
+      256
+    ],
+    "num_metrics": 4,
+    "expert_algorithms": [
+      "Sub_KNN",
+      "KMeansAD_U",
+      "Sub_IForest",
+      "Sub_LOF",
+      "Sub_HBOS",
+      "POLY",
+      "SR",
+      "PCA",
+      "Sub_PCA",
+      "OCSVM",
+      "Sub_OCSVM"
+    ],
+    "target_metrics": [
+      "VUS-PR",
+      "Affiliation-F1",
+      "F1T",
+      "Standard-F1"
+    ],
+    "source_sha256": "833b35461cae4c9c8c235ada76d29c65b31800215df5e37b4e2faa8a70b356c6",
+    "source_num_experts": 13,
+    "retained_source_indices": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "removed_experts": [
+      "KNN",
+      "HBOS"
+    ],
+    "export": "slice each metric block of the final linear weights and biases; shared layers unchanged; tensors stored on CPU",
+    "original_training": {
+      "n_tasks_loaded": 850000,
+      "num_metrics": 4,
+      "num_experts": 13,
+      "loss": "multi-metric class-weighted KL",
+      "batch_size": 512,
+      "epochs": 30,
+      "learning_rate": 0.0001
+    },
+    "retrained": false
+  },
+  "files": [
+    {
+      "name": "encoder-00001-of-00004.pt",
+      "bytes": 46251534,
+      "sha256": "f01e3f220cdc49491e215301bd7110d10403ce095abce3dd7ceac2f3eab0e114"
+    },
+    {
+      "name": "encoder-00002-of-00004.pt",
+      "bytes": 46208618,
+      "sha256": "7f4ccb826c24d11eed1629a4f818cbf69984bbecb4ac9211074197e5e527fc2e"
+    },
+    {
+      "name": "encoder-00003-of-00004.pt",
+      "bytes": 42008226,
+      "sha256": "637dea042392ee1e92511da303d3e07a62462a310ccf73ef922622d44cc4f178"
+    },
+    {
+      "name": "encoder-00004-of-00004.pt",
+      "bytes": 8406642,
+      "sha256": "5967a1eb7b5d418708b66c086b7696904dbe12e055364877a9f2d49f3d9783bf"
+    },
+    {
+      "name": "router.pt",
+      "bytes": 3724916,
+      "sha256": "c3adea1dd9a2519d5eaeb4424b006d872a8f519a23c4b9c5cdd2356d0a929436"
+    }
+  ]
+}

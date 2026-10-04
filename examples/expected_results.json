@@ -1,0 +1,108 @@
+{
+  "python": "3.10.18",
+  "device": "cpu",
+  "all_four_heads_tested": true,
+  "all_eleven_specialists_tested": true,
+  "checkpoint_regression_tests": 4,
+  "checkpoint_regression_status": "passed",
+  "training_performed": false,
+  "full_benchmark_reproduced": false,
+  "examples": {
+    "univariate": [
+      {
+        "filename": "synthetic_univariate.csv",
+        "head": "VUS-PR",
+        "n_test": 512,
+        "selected_experts": "[[\"KMeansAD_U\", \"SR\", \"Sub_PCA\"]]",
+        "VUS-PR": 0.989064813132158,
+        "Affiliation-F": 0.995567727998335,
+        "F1_T": 0.7838024497032166,
+        "Standard-F1": 0.8727272727272727
+      },
+      {
+        "filename": "synthetic_univariate.csv",
+        "head": "Affiliation-F1",
+        "n_test": 512,
+        "selected_experts": "[[\"SR\", \"OCSVM\", \"KMeansAD_U\"]]",
+        "VUS-PR": 0.927811764508275,
+        "Affiliation-F": 0.9928344785608312,
+        "F1_T": 0.7400506734848022,
+        "Standard-F1": 0.6428571428571429
+      },
+      {
+        "filename": "synthetic_univariate.csv",
+        "head": "F1T",
+        "n_test": 512,
+        "selected_experts": "[[\"SR\", \"KMeansAD_U\", \"PCA\"]]",
+        "VUS-PR": 0.9890411444931048,
+        "Affiliation-F": 0.995567727998335,
+        "F1_T": 0.7838024497032166,
+        "Standard-F1": 0.8727272727272727
+      },
+      {
+        "filename": "synthetic_univariate.csv",
+        "head": "Standard-F1",
+        "n_test": 512,
+        "selected_experts": "[[\"KMeansAD_U\", \"PCA\", \"Sub_PCA\"]]",
+        "VUS-PR": 0.8275855317465362,
+        "Affiliation-F": 0.9695942963343596,
+        "F1_T": 0.5396825671195984,
+        "Standard-F1": 0.68
+      }
+    ],
+    "multivariate": [
+      {
+        "filename": "synthetic_multivariate.csv",
+        "head": "VUS-PR",
+        "n_test": 512,
+        "selected_experts": "[[\"KMeansAD_U\", \"Sub_IForest\", \"PCA\"], [\"Sub_IForest\", \"Sub_LOF\", \"KMeansAD_U\"]]",
+        "VUS-PR": 0.7792718007067018,
+        "Affiliation-F": 0.9085979842277746,
+        "F1_T": 0.3883495330810547,
+        "Standard-F1": 0.4444444444444444
+      },
+      {
+        "filename": "synthetic_multivariate.csv",
+        "head": "Affiliation-F1",
+        "n_test": 512,
+        "selected_experts": "[[\"SR\", \"Sub_LOF\", \"PCA\"], [\"SR\", \"Sub_LOF\", \"OCSVM\"]]",
+        "VUS-PR": 0.9949303827277,
+        "Affiliation-F": 0.9956724450142168,
+        "F1_T": 0.8091716766357422,
+        "Standard-F1": 0.8928571428571429
+      },
+      {
+        "filename": "synthetic_multivariate.csv",
+        "head": "F1T",
+        "n_test": 512,
+        "selected_experts": "[[\"KMeansAD_U\", \"SR\", \"PCA\"], [\"Sub_LOF\", \"KMeansAD_U\", \"PCA\"]]",
+        "VUS-PR": 0.9883767671824684,
+        "Affiliation-F": 0.9966202549811184,
+        "F1_T": 0.7291496992111206,
+        "Standard-F1": 0.8461538461538461
+      },
+      {
+        "filename": "synthetic_multivariate.csv",
+        "head": "Standard-F1",
+        "n_test": 512,
+        "selected_experts": "[[\"KMeansAD_U\", \"PCA\", \"Sub_PCA\"], [\"Sub_LOF\", \"PCA\", \"Sub_PCA\"]]",
+        "VUS-PR": 0.8001316707114489,
+        "Affiliation-F": 0.9623046968581156,
+        "F1_T": 0.4462809860706329,
+        "Standard-F1": 0.5194805194805194
+      }
+    ]
+  },
+  "real_NAB_example": [
+    {
+      "filename": "010_NAB_id_10_WebService_tr_500_1st_271.csv",
+      "head": "VUS-PR",
+      "n_test": 500,
+      "selected_experts": "[[\"Sub_IForest\", \"PCA\", \"Sub_PCA\"]]",
+      "VUS-PR": 0.997471881855496,
+      "Affiliation-F": 0.9970171708570796,
+      "F1_T": 0.9504950642585754,
+      "Standard-F1": 0.9504950495049505
+    }
+  ]
+}

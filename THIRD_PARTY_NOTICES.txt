@@ -1,0 +1,22 @@
+This inference package retains the source attribution notices in the reused files.
+
+TimeRCD encoder architecture and released pretrained encoder:
+https://github.com/thu-sail-lab/Time-RCD
+https://huggingface.co/thu-sail-lab/Time-RCD
+
+KNN, IForest, LOF, HBOS, PCA and OCSVM implementations identify PyOD
+(yzhao062) as their upstream source in their file headers:
+https://github.com/yzhao062/pyod
+
+KMeansAD identifies TimeEval-algorithms (CodeLionX and wenig) as its upstream
+source. Its original attribution and source URL remain in models/KMeansAD.py.
+
+POLY and the Fourier distance implementation retain Yinchen Wu's attribution.
+SR retains Andreas Mueller's attribution. utils/utility.py retains its notice
+for the section modified from scikit-learn's ensemble/bagging.py.
+
+The evaluation package and sliding-window routines are retained from the
+project's TSB-AD-based implementation. Dataset archives are downloaded from
+the original TSB-AD distribution; benchmark data are not bundled here.
+
+These acknowledgments do not replace or relicense the upstream components.

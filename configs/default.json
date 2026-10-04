@@ -1,0 +1,17 @@
+{
+  "top_k": 3,
+  "default_head": "VUS-PR",
+  "available_heads": ["VUS-PR", "Affiliation-F1", "F1T", "Standard-F1"],
+  "seed": 42,
+  "route_span": "original",
+  "original_univariate_route": "complete unlabeled observed series",
+  "original_multivariate_route": "first 10000 observations of the unlabeled test suffix, independently per variable",
+  "specialist_train_prefix_limit": 10000,
+  "prefix_fitted_specialists": ["PCA", "Sub_PCA", "OCSVM", "Sub_OCSVM"],
+  "test_segment_fitted_or_scored_specialists": ["Sub_KNN", "KMeansAD_U", "Sub_IForest", "Sub_LOF", "Sub_HBOS", "POLY", "SR"],
+  "input_normalization": "separate z-score for specialist fitting prefix and test suffix; routing normalization over its observed span",
+  "score_fusion": "per-specialist z-score, mean, then min-max; repeat across variables for multivariate inputs",
+  "label_usage": "evaluation only; labels are not accepted by TSRouter.predict",
+  "threshold_metrics": "oracle threshold independently selected for each F1 metric after scoring",
+  "release_scope": "inference with pruned existing weights; no retraining and no assertion that all manuscript results have been reproduced"
+}
